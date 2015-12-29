@@ -40,7 +40,7 @@ namespace Microsoft.Exchange.WebServices.Data
     /// <summary>
     /// Represents a binding to the Exchange Web Services.
     /// </summary>
-    public sealed class ExchangeService : ExchangeServiceBase
+    public sealed partial class ExchangeService : ExchangeServiceBase
     {
         #region Constants
 

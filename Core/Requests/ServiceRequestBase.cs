@@ -36,7 +36,7 @@ namespace Microsoft.Exchange.WebServices.Data
     /// <summary>
     /// Represents an abstract service request.
     /// </summary>
-    internal abstract class ServiceRequestBase
+    internal abstract partial class ServiceRequestBase
     {
         #region Private Constants
         /// <summary>

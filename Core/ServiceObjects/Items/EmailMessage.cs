@@ -32,7 +32,7 @@ namespace Microsoft.Exchange.WebServices.Data
     /// </summary>
     [Attachable]
     [ServiceObjectDefinition(XmlElementNames.Message)]
-    public class EmailMessage : Item
+    public partial class EmailMessage : Item
     {
         /// <summary>
         /// Initializes an unsaved local instance of <see cref="EmailMessage"/>. To bind to an existing e-mail message, use EmailMessage.Bind() instead.

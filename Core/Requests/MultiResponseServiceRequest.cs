@@ -31,7 +31,7 @@ namespace Microsoft.Exchange.WebServices.Data
     /// Represents a service request that can have multiple responses.
     /// </summary>
     /// <typeparam name="TResponse">The type of the response.</typeparam>
-    internal abstract class MultiResponseServiceRequest<TResponse> : SimpleServiceRequestBase
+    internal abstract partial class MultiResponseServiceRequest<TResponse> : SimpleServiceRequestBase
         where TResponse : ServiceResponse
     {
         private ServiceErrorHandling errorHandlingMode;

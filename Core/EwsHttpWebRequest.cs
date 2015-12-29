@@ -23,6 +23,7 @@
  * DEALINGS IN THE SOFTWARE.
  */
 
+
 namespace Microsoft.Exchange.WebServices.Data
 {
     using System;
@@ -30,6 +31,7 @@ namespace Microsoft.Exchange.WebServices.Data
     using System.Net;
     using System.Net.Security;
     using System.Security.Cryptography.X509Certificates;
+    using TPL = System.Threading.Tasks;
 
     /// <summary>
     /// Represents an implementation of the IEwsHttpWebRequest interface that uses HttpWebRequest.
@@ -291,6 +293,12 @@ namespace Microsoft.Exchange.WebServices.Data
         {
             get { return this.request.ConnectionGroupName; }
             set { this.request.ConnectionGroupName = value; }
+        }
+
+        TPL.Task<IEwsHttpWebResponse> IEwsHttpWebRequest.GetResponseAsync()
+        {
+            return TPL.Task.Factory.FromAsync((callback, o) => this.request.BeginGetResponse(callback, o),
+                result => new EwsHttpWebResponse(this.request.EndGetResponse(result) as HttpWebResponse) as IEwsHttpWebResponse, request);
         }
 
         #endregion

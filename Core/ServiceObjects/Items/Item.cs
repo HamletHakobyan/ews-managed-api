@@ -34,7 +34,7 @@ namespace Microsoft.Exchange.WebServices.Data
     /// </summary>
     [Attachable]
     [ServiceObjectDefinition(XmlElementNames.Item)]
-    public class Item : ServiceObject
+    public partial class Item : ServiceObject
     {
         private ItemAttachment parentAttachment;
 

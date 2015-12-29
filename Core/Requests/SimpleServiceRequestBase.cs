@@ -34,7 +34,7 @@ namespace Microsoft.Exchange.WebServices.Data
     /// <summary>
     /// Represents an abstract, simple request-response service request.
     /// </summary>
-    internal abstract class SimpleServiceRequestBase : ServiceRequestBase
+    internal abstract partial class SimpleServiceRequestBase : ServiceRequestBase
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SimpleServiceRequestBase"/> class.
